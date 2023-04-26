@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+   jupyter:
+     image: "jupyter/all-spark-notebook"
+     restart: unless-stopped
+     ports:
+       - '8880:8888'
+     volumes:
+       - /home/ubuntu/fastai/models:/models:z
+
+# docker run --rm --name notebook -d -p 8880:8888 jupyter/base-notebook
